@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Author Analytics Dashboard - SOCSignals</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "primary-dark": "#0ea64d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                        "surface-dark": "#1c2e24",
+                        "text-muted": "#9db9a8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling elements */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(28, 46, 36, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 84, 69, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-hidden">
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden pb-24">
+<!-- Header Section -->
+<header class="pt-14 pb-4 px-5 flex items-center justify-between sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-[#28392f]">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profile picture of a male user with glasses" class="w-10 h-10 rounded-full object-cover border-2 border-primary/50" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLQTpc4licQJrO2-vHnuqAulVMc_rANjFqs40ZOg0KN2x7rmHwgVz-5QRys67MtGHm18pDtpNPGkLsEKTFANSii8O8FgY8xzAK1iTtfV-pLuylNhbutNyBt1BKsYpX90IMeOWU89joJUzJodkUwfRAVHCfHtM1T8KgIVRDEwXOFrdBBGiGJ_9km1uDI97s1PfTmRZRSozO8HbHAaAl_mf78_nU9P_yr2dpUaF-_kmgkgtpkiSk1LXqwyCQ_mHSkICZkUHETo9Knw"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full border-2 border-background-dark"></div>
+</div>
+<div>
+<p class="text-xs text-text-muted font-medium">Welcome back,</p>
+<h1 class="text-sm font-bold text-slate-900 dark:text-white">Alex Chen</h1>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-surface-dark/50 border border-[#3b5445] px-3 py-1.5 rounded-full hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-text-muted text-[18px]">calendar_today</span>
+<span class="text-xs font-semibold text-primary">Last 30 Days</span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span>
+</button>
+</header>
+<!-- Analytics Title -->
+<div class="px-5 py-4">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                Analytics Overview
+            </h2>
+</div>
+<!-- Hero Metric Cards (Horizontal Scroll) -->
+<div class="flex gap-4 px-5 overflow-x-auto hide-scrollbar pb-2">
+<!-- Card 1: Views -->
+<div class="min-w-[140px] flex-1 glass-panel p-4 rounded-xl flex flex-col justify-between gap-3 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex items-start justify-between">
+<div class="p-1.5 bg-[#28392f] rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</div>
+<span class="text-xs font-medium text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                        12%
+                    </span>
+</div>
+<div>
+<p class="text-2xl font-bold text-white font-mono tracking-tight">12.5k</p>
+<p class="text-xs text-text-muted font-medium mt-0.5">Total Views</p>
+</div>
+</div>
+<!-- Card 2: Read Time -->
+<div class="min-w-[140px] flex-1 glass-panel p-4 rounded-xl flex flex-col justify-between gap-3 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all"></div>
+<div class="flex items-start justify-between">
+<div class="p-1.5 bg-[#28392f] rounded-lg text-blue-400">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<span class="text-xs font-medium text-blue-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                        5%
+                    </span>
+</div>
+<div>
+<p class="text-2xl font-bold text-white font-mono tracking-tight">4m 32s</p>
+<p class="text-xs text-text-muted font-medium mt-0.5">Avg. Read Time</p>
+</div>
+</div>
+<!-- Card 3: Scroll Depth -->
+<div class="min-w-[140px] flex-1 glass-panel p-4 rounded-xl flex flex-col justify-between gap-3 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
+<div class="flex items-start justify-between">
+<div class="p-1.5 bg-[#28392f] rounded-lg text-purple-400">
+<span class="material-symbols-outlined text-[20px]">vertical_align_bottom</span>
+</div>
+<span class="text-xs font-medium text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+                        0%
+                    </span>
+</div>
+<div>
+<p class="text-2xl font-bold text-white font-mono tracking-tight">68%</p>
+<p class="text-xs text-text-muted font-medium mt-0.5">Avg Scroll Depth</p>
+</div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<div class="px-5 py-6">
+<div class="glass-panel rounded-xl p-5 border border-[#3b5445]">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-sm font-semibold text-white">Engagement Over Time</h3>
+<p class="text-xs text-text-muted mt-1">Daily unique interactions</p>
+</div>
+<div class="text-right">
+<p class="text-2xl font-bold text-white tracking-tight">+12.4%</p>
+<p class="text-xs text-primary font-medium">vs last 30 days</p>
+</div>
+</div>
+<div class="h-48 w-full relative">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between text-xs text-[#3b5445] font-mono pointer-events-none">
+<div class="border-b border-[#3b5445]/30 w-full h-0"></div>
+<div class="border-b border-[#3b5445]/30 w-full h-0"></div>
+<div class="border-b border-[#3b5445]/30 w-full h-0"></div>
+<div class="border-b border-[#3b5445]/30 w-full h-0"></div>
+<div class="border-b border-[#3b5445]/30 w-full h-0"></div>
+</div>
+<!-- SVG Chart -->
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 50">
+<!-- Gradient Definition -->
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#13ec6d" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#13ec6d" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Path -->
+<path d="M0 35 Q 10 30, 20 38 T 40 25 T 60 15 T 80 28 T 100 10 V 50 H 0 Z" fill="url(#chartGradient)"></path>
+<!-- Line Path -->
+<path d="M0 35 Q 10 30, 20 38 T 40 25 T 60 15 T 80 28 T 100 10" fill="none" stroke="#13ec6d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Data Points (Interactive-like) -->
+<circle cx="60" cy="15" fill="#102218" r="2.5" stroke="#13ec6d" stroke-width="2"></circle>
+<!-- Tooltip-like element -->
+<g transform="translate(45, 0)">
+<rect fill="#13ec6d" height="12" rx="3" width="30" x="0" y="0"></rect>
+<text fill="#102218" font-size="6" font-weight="bold" text-anchor="middle" x="15" y="8">Peak</text>
+</g>
+</svg>
+</div>
+<div class="flex justify-between mt-4 px-1">
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Mon</p>
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Tue</p>
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Wed</p>
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Thu</p>
+<p class="text-white text-[10px] font-bold uppercase tracking-wider">Fri</p>
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Sat</p>
+<p class="text-text-muted text-[10px] font-bold uppercase tracking-wider">Sun</p>
+</div>
+</div>
+</div>
+<!-- Top Categories & Scroll Depth Split -->
+<div class="px-5 pb-6 grid grid-cols-1 gap-6">
+<!-- Top Categories -->
+<div class="glass-panel rounded-xl p-5 border border-[#3b5445]">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-semibold text-white">Top Categories</h3>
+<span class="material-symbols-outlined text-text-muted text-sm">more_horiz</span>
+</div>
+<div class="space-y-4">
+<!-- Category Item -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs">
+<span class="text-white font-medium">Threat Intel</span>
+<span class="text-primary font-mono">1,204</span>
+</div>
+<div class="h-1.5 w-full bg-[#28392f] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- Category Item -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs">
+<span class="text-white font-medium">Incident Response</span>
+<span class="text-primary font-mono">856</span>
+</div>
+<div class="h-1.5 w-full bg-[#28392f] rounded-full overflow-hidden">
+<div class="h-full bg-primary/70 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Category Item -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs">
+<span class="text-white font-medium">Malware Analysis</span>
+<span class="text-primary font-mono">642</span>
+</div>
+<div class="h-1.5 w-full bg-[#28392f] rounded-full overflow-hidden">
+<div class="h-full bg-primary/50 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Category Item -->
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs">
+<span class="text-white font-medium">SIEM Tuning</span>
+<span class="text-primary font-mono">420</span>
+</div>
+<div class="h-1.5 w-full bg-[#28392f] rounded-full overflow-hidden">
+<div class="h-full bg-primary/30 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Articles List -->
+<div class="px-5 pb-10">
+<h3 class="text-lg font-bold text-white mb-4">Published Articles</h3>
+<div class="flex flex-col gap-3">
+<!-- Article Card 1 -->
+<div class="glass-panel p-4 rounded-xl border border-[#3b5445] active:scale-[0.99] transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Analysis</div>
+<span class="text-text-muted text-xs">2 days ago</span>
+</div>
+<h4 class="text-white font-semibold text-sm leading-snug mb-3 pr-4">Analyzing the Log4j Aftermath: Lessons Learned for SOC Teams</h4>
+<div class="flex items-center gap-4 border-t border-[#3b5445] pt-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">visibility</span>
+<span class="text-xs font-mono text-text-muted">1.2k</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">thumb_up</span>
+<span class="text-xs font-mono text-text-muted">45</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">chat_bubble</span>
+<span class="text-xs font-mono text-text-muted">12</span>
+</div>
+<div class="flex-1 text-right">
+<span class="text-xs text-primary font-medium">View Stats →</span>
+</div>
+</div>
+</div>
+<!-- Article Card 2 -->
+<div class="glass-panel p-4 rounded-xl border border-[#3b5445] active:scale-[0.99] transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Guide</div>
+<span class="text-text-muted text-xs">1 week ago</span>
+</div>
+<h4 class="text-white font-semibold text-sm leading-snug mb-3 pr-4">Effective SIEM Rules to Reduce False Positives</h4>
+<div class="flex items-center gap-4 border-t border-[#3b5445] pt-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">visibility</span>
+<span class="text-xs font-mono text-text-muted">892</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">thumb_up</span>
+<span class="text-xs font-mono text-text-muted">32</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">chat_bubble</span>
+<span class="text-xs font-mono text-text-muted">20</span>
+</div>
+<div class="flex-1 text-right">
+<span class="text-xs text-primary font-medium">View Stats →</span>
+</div>
+</div>
+</div>
+<!-- Article Card 3 -->
+<div class="glass-panel p-4 rounded-xl border border-[#3b5445] opacity-80 active:scale-[0.99] transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-purple-500/10 text-purple-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Opinion</div>
+<span class="text-text-muted text-xs">3 weeks ago</span>
+</div>
+<h4 class="text-white font-semibold text-sm leading-snug mb-3 pr-4">The Future of AI in Defensive Cybersecurity</h4>
+<div class="flex items-center gap-4 border-t border-[#3b5445] pt-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">visibility</span>
+<span class="text-xs font-mono text-text-muted">2.4k</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">thumb_up</span>
+<span class="text-xs font-mono text-text-muted">140</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px]">chat_bubble</span>
+<span class="text-xs font-mono text-text-muted">56</span>
+</div>
+<div class="flex-1 text-right">
+<span class="text-xs text-primary font-medium">View Stats →</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#1c2720]/95 backdrop-blur-lg border-t border-[#28392f] px-6 pb-6 pt-3">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">home</span>
+</div>
+<span class="text-[10px] font-medium text-text-muted group-hover:text-white transition-colors">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="text-primary bg-primary/10 px-4 py-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[24px] fill-current">analytics</span>
+</div>
+<span class="text-[10px] font-medium text-primary">Analytics</span>
+</a>
+<!-- Compose Button (Prominent) -->
+<a class="relative -top-5" href="#">
+<div class="bg-primary hover:bg-primary-dark text-background-dark h-14 w-14 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(19,236,109,0.4)] transition-all active:scale-95">
+<span class="material-symbols-outlined text-[28px]">edit</span>
+</div>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+</div>
+<span class="text-[10px] font-medium text-text-muted group-hover:text-white transition-colors">Community</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</div>
+<span class="text-[10px] font-medium text-text-muted group-hover:text-white transition-colors">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>
