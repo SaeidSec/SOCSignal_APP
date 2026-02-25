@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technical Article Detail - SOCSignals</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec6d",
+              "primary-dark": "#0fae52",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0f0f12", // Deep charcoal for technical feel
+              "surface-dark": "#18181b", // Slightly lighter for cards/inputs
+              "warning": "#facc15",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "mono": ["JetBrains Mono", "monospace"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar for code blocks */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-full max-h-screen w-full flex-col overflow-hidden mx-auto max-w-md bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Sticky Header -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-50 sticky top-0">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+</button>
+<h2 class="flex-1 text-center text-sm font-semibold truncate px-4 opacity-0 transition-opacity duration-200" id="header-title">
+                Advanced SIEM Correlation Rules
+            </h2>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</button>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24 scroll-smooth">
+<!-- Hero Section -->
+<div class="px-5 pt-6 pb-2">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2.5 py-1 rounded-md bg-primary/10 text-primary-dark dark:text-primary text-xs font-mono font-medium tracking-wide">SIEM</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-400 text-xs font-mono font-medium tracking-wide">Blue Team</span>
+<span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-400 text-xs font-mono font-medium tracking-wide">Threat Hunting</span>
+</div>
+<h1 class="text-3xl font-bold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white">
+                    Advanced SIEM Correlation Rules
+                </h1>
+<div class="flex items-center gap-3 mb-6">
+<div class="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700" data-alt="Profile picture of author Alex Sentinel">
+<img alt="Alex Sentinel Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXqO57eTEgKKTBg_ksajiaD7fZq192VxtmIQ5xXREASqW1YkbOPJRCKZODDZ9zUBCgB83TqB2F8KsVlYihN98_M1eR9cNXJYrWHpf0IjrmwlRtGkajOseiPYL3xIiGSPUZ1aZ5BkKtFiXvu-UDLL46Gx_Oqa7xaEhr9rQesMprLQojcpf8UXBahlxYQ3aNaMBZzGKvJWfd8kpxCTqcwLjtBYsxjab7uFTnDbM7c9a7Tqes3h_wEJxGEzRSlCdt0e-vJTNyM9bXtA"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-slate-100">Alex Sentinel</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-mono">Oct 24 • 8 min read</span>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent mb-6"></div>
+<!-- Article Body -->
+<article class="px-5 space-y-6">
+<p class="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    Effective detection engineering isn't just about collecting logs; it's about connecting the dots. Today we're diving deep into correlation logic that catches lateral movement techniques often missed by standard rule sets.
+                </p>
+<p class="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    When analyzing authentication logs, specifically SSH activity, it's crucial to distinguish between brute force attempts and automated script failures.
+                </p>
+<!-- Warning Callout -->
+<div class="relative bg-warning/10 border-l-4 border-warning rounded-r-lg p-4 my-6">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-warning shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col gap-1">
+<h4 class="text-sm font-bold text-warning uppercase tracking-wider">Critical Warning</h4>
+<p class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
+                                Ensure you filter out known <code class="bg-black/10 dark:bg-white/10 px-1 rounded text-xs font-mono">localhost</code> traffic before applying this rule to production environments to avoid high-volume false positives.
+                            </p>
+</div>
+</div>
+</div>
+<p class="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    Use the following one-liner to rapidly parse your auth logs for outlier behavior regarding failed passwords:
+                </p>
+<!-- Code Block -->
+<div class="rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800 bg-[#0d1117] my-6 shadow-lg group relative">
+<div class="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-slate-800">
+<span class="text-xs font-mono text-slate-400">bash</span>
+<button class="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                            Copy
+                        </button>
+</div>
+<div class="p-4 overflow-x-auto">
+<pre class="font-mono text-sm leading-6 text-slate-300 whitespace-pre"><code><span class="text-[#ff7b72]">grep</span> -r <span class="text-[#a5d6ff]">"failed password"</span> /var/log/auth.log | \
+<span class="text-[#ff7b72]">awk</span> <span class="text-[#a5d6ff]">{print $11}'</span> | \
+<span class="text-[#ff7b72]">sort</span> | <span class="text-[#ff7b72]">uniq</span> -c | \
+<span class="text-[#ff7b72]">sort</span> -nr</code></pre>
+</div>
+</div>
+<p class="text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    This pipeline extracts the 11th field (typically the IP address in standard auth log formats), counts unique occurrences, and sorts them numerically in reverse order. This highlights the most aggressive IPs instantly.
+                </p>
+<div class="h-8"></div>
+</article>
+<!-- Comments Section -->
+<section class="bg-slate-50 dark:bg-[#131316] border-t border-slate-200 dark:border-slate-800 px-5 py-8 pb-10">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Discussion <span class="text-slate-500 dark:text-slate-500 text-base font-normal ml-1">(42)</span></h3>
+<button class="text-sm font-medium text-primary-dark dark:text-primary">Subscribe</button>
+</div>
+<div class="space-y-6">
+<!-- Comment 1 -->
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-xs font-bold text-white shrink-0">
+                            NN
+                        </div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">NetSecNinja</span>
+<span class="text-xs text-slate-500">2h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Great logic, but how does this scale with Elastic? Would you recommend using an ingest pipeline instead of raw bash parsing for historical data?
+                            </p>
+<div class="flex gap-4 mt-3">
+<button class="flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined text-[16px] filled">thumb_up</span>
+                                    12
+                                </button>
+<button class="text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">Reply</button>
+</div>
+</div>
+</div>
+<!-- Comment 2 (Threaded) -->
+<div class="flex gap-3 ml-11 border-l-2 border-slate-200 dark:border-slate-800 pl-4">
+<div class="w-6 h-6 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0" data-alt="Author Alex Sentinel avatar small">
+<img alt="Alex Sentinel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5R_zKe-ZdMShh6C1u9RYEjKERZqVdGIph1mOavZXuFc12SHVW9g5aF5Mchlmody_J3U2e-HKen1DU8ERr01qHZqymZNoRCdsDhVsw2cvwmk96AWfpw6UkvIp4-cCpz9wHgzHlWKb__rD089-CcnLSyMXl5lAA9RgPYUOKfvdpYAecHcLdXHcAroP7Il433m7rXiR4CwzZFlYCuDACYA5BCDNlCNTmds_Z_vBUVusO-H9LaWNZVjuBRMlZ2y-6GeGNm74cQdy2LA"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Alex Sentinel</span>
+<span class="bg-primary/20 text-primary-dark dark:text-primary text-[10px] font-bold px-1.5 py-0.5 rounded">AUTHOR</span>
+<span class="text-xs text-slate-500">1h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Definitely prefer an ingest pipeline for production! The bash script is mostly for quick triage on a single compromised host.
+                            </p>
+<div class="flex gap-4 mt-3">
+<button class="flex items-center gap-1.5 text-xs font-medium text-primary-dark dark:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] filled">thumb_up</span>
+                                    4
+                                </button>
+<button class="text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">Reply</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment Input -->
+<div class="mt-8 relative">
+<div class="absolute top-3 left-3 w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<input class="w-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-xl pl-14 pr-12 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-slate-900 dark:text-white placeholder-slate-400 transition-shadow shadow-sm" placeholder="Write a comment..." type="text"/>
+<div class="absolute top-1/2 -translate-y-1/2 right-3 flex gap-1">
+<button class="p-1.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</button>
+<button class="p-1.5 text-primary-dark dark:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark pb-safe">
+<div class="flex justify-between items-center px-6 py-2 pb-5">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">home</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary-dark dark:text-primary transition-colors text-[24px]">search</span>
+<span class="text-[10px] font-medium text-primary-dark dark:text-primary transition-colors">Search</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">bookmarks</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Saved</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">person</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+<script>
+        // Simple script to show/hide title in header based on scroll
+        const scrollContainer = document.querySelector('main');
+        const headerTitle = document.getElementById('header-title');
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (scrollContainer.scrollTop > 100) {
+                headerTitle.classList.remove('opacity-0');
+            } else {
+                headerTitle.classList.add('opacity-0');
+            }
+        });
+    </script>
+</body></html>
